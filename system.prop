@@ -1,0 +1,198 @@
+#
+# system.prop for msm8916
+#
+
+#rild.libpath=/system/lib/libreference-ril.so
+rild.libpath=/system/vendor/lib/libril-qc-qmi-1.so
+rild.libargs=-d /dev/smd0
+persist.rild.nitz_plmn=
+persist.rild.nitz_long_ons_0=
+persist.rild.nitz_long_ons_1=
+persist.rild.nitz_long_ons_2=
+persist.rild.nitz_long_ons_3=
+persist.rild.nitz_short_ons_0=
+persist.rild.nitz_short_ons_1=
+persist.rild.nitz_short_ons_2=
+persist.rild.nitz_short_ons_3=
+ril.subscription.types=NV,RUIM
+DEVICE_PROVISIONED=1
+# Start in cdma mode
+ro.telephony.default_network=5
+
+debug.sf.hw=1
+debug.egl.hw=1
+debug.composition.type=c2d
+persist.hwc.mdpcomp.enable=true
+debug.mdpcomp.logs=0
+#zte-modify,yyp,modify for flicker on some times, begin
+debug.mdpcomp.idletime=500
+#zte-modify,yyp,modify for flicker on some times, end
+#Enable translucent status bar feature
+persist.hwc.ptor.enable=true
+dalvik.vm.heapsize=36m
+dev.pm.dyn_samplingrate=1
+persist.demo.hdmirotationlock=false
+debug.sf.gpu_comp_tiling=1
+
+#ro.hdmi.enable=true
+#tunnel.decode=true
+#tunnel.audiovideo.decode=true
+#lpa.decode=false
+#lpa.use-stagefright=true
+#persist.speaker.prot.enable=false
+
+#
+# system props for the cne module
+#
+persist.cne.feature=1
+
+#
+# system props for the dpm module
+#
+persist.dpm.feature=0
+
+#system props for the MM modules
+media.stagefright.enable-player=true
+media.stagefright.enable-http=true
+media.stagefright.enable-aac=true
+media.stagefright.enable-qcp=true
+media.stagefright.enable-fma2dp=true
+media.stagefright.enable-scan=true
+mmp.enable.3g2=true
+mm.enable.smoothstreaming=true
+mm.disable.sec_smoothstreaming=true
+media.aac_51_output_enabled=true
+#codecs:(PARSER_)AAC AC3 ASF AVI DTS 3G2 MP2TS QCP FLAC
+mm.enable.qcom_parser=168563
+
+#
+# system props for the data modules
+#
+ro.use_data_netmgrd=true
+persist.data.netmgrd.qos.enable=true
+
+#system props for time-services
+persist.timed.enable=true
+
+#
+# system prop for opengles version
+#
+# 196608 is decimal for 0x30000 to report version 3
+ro.opengles.version=196608
+
+# System property for cabl
+ro.qualcomm.cabl=0
+
+#
+# System props for telephony
+# System prop to turn on CdmaLTEPhone always
+telephony.lteOnCdmaDevice=1
+persist.omh.enabled=false
+
+#
+# System props for bluetooh
+# System prop to turn on hfp client
+bluetooth.hfp.client=1
+
+#Simulate sdcard on /data/media
+#
+persist.fuse_sdcard=true
+
+#
+#snapdragon value add features
+#
+ro.qc.sdk.audio.ssr=false
+##fluencetype can be "fluence" or "fluencepro" or "none"
+ro.qc.sdk.audio.fluencetype=none
+persist.audio.fluence.voicecall=true
+persist.audio.fluence.voicerec=false
+persist.audio.fluence.speaker=true
+#Set for msm8916
+tunnel.audio.encode = false
+#Buffer size in kbytes for compress offload playback
+audio.offload.buffer.size.kb=32
+#use VERY_HIGH_QUALITY for audio resampler
+af.resampler.quality=4
+#Enable offload audio video playback by default
+av.offload.enable=false
+#enable voice path for PCM VoIP by default
+use.voice.path.for.pcm.voip=true
+#
+#System property for FM transmitter
+#
+ro.fm.transmitter=false
+#enable dsp gapless mode by default
+audio.offload.gapless.enabled=true
+
+#Audio voice concurrency related flags
+voice.playback.conc.disabled=true
+voice.record.conc.disabled=true
+voice.voip.conc.disabled=true
+
+#Set composition for USB
+persist.sys.usb.config=diag,modem,nmea,adb
+
+# set max starting background services
+ro.config.max_starting_bg=8
+
+# set lcd density
+##lijun10019417,20140605,modified value to 320
+ro.sf.lcd_density=320
+
+#property to enable user to access Google WFD settings
+persist.debug.wfd.enable=1
+#propery to enable VDS WFD solution
+persist.hwc.enable_vds=1
+
+
+# Set the default build as dsds
+persist.radio.multisim.config=dsds
+
+# CT Signal Cluster
+persist.env.c.sb.style=2
+
+#wangpengren 20131209 add for globalroaming
+persist.env.phone.jointforward=true
+persist.env.spec=ChinaTelecom
+persist.env.settings.cfgmmsapn=true
+persist.env.settings.ltemode=true
+
+#ztemod, zhuxingwei for black screen gesture, begin
+persist.sys.gesture.enable=0
+#ztemod, zhuxingwei for black screen gesture, end
+
+#ztemod,qibo,162677,add mod
+persist.radio.add_power_save=1
+persist.use_force_sync=1
+#liliang add for virtual sdcard 
+persist.sys.emmcsdcard.enabled=1
+
+#liangqiujuan add for iReader
+ro.ireader.channel=109216
+
+#zte-modify, luxiazi , 2013.11.18, System props for streaming ua profile, begin
+ro.streaming.ua.prof=http://www.zte.com.cn/mobile/uaprof/Q802D.xml
+#zte-modify, luxiazi , 2013.11.18 , System props for streaming ua profile, end
+#zte-modify by maas 20140910 for cpu slow
+ro.min_freq =800000
+
+#zte_sw_niuchao 20140910 begin for_init_the_mtu
+persist.data_netmgrd_mtu=1400
+#zte_sw_niuchao 20140910 end for_init_the_mtu
+
+#ztemod,zhangbo,130826,add mod
+persist.sys.strictmode.disable=1
+persist.sys.strictmode.visual=0
+
+
+#ztemod by wf for qxdm_offline log beging
+persist.emode.qxdmollog.switch=disable
+persist.emode.qxdmollog.restart=no
+persist.emode.qxdmollog.type=Gps
+persist.emode.qxdmollog.action=stop
+
+persist.emode.qxdmollog.needcfg=false
+persist.emode.qxdmollog.cfgpath=/
+
+persist.emode.tcpdump.action=stop
+
