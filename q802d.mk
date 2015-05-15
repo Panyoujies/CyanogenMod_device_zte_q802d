@@ -201,10 +201,6 @@ PRODUCT_PACKAGES += \
     libqcomfm_jni \
     qcom.fmradio
 
-#fstab.qcom
-PRODUCT_PACKAGES += \
-    fstab.qcom
-
 PRODUCT_PACKAGES += \
     libqcompostprocbundle \
     libqcomvisualizer \
